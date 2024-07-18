@@ -1,3 +1,9 @@
 /* 
     General Styles
 */
+img {
+    border-radius: 50%;
+    width: 18vh;
+    height: 18vh;
+    border: solid black 1px;
+}
