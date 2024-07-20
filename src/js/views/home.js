@@ -10,7 +10,7 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.createAgenda();
-		actions.getContact();
+		actions.getContacts();
 
 	}, []);
 	return (
@@ -35,7 +35,7 @@ export const Home = () => {
       <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -43,7 +43,7 @@ export const Home = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
+                Create a Contact
               </h1>
               <button
                 type="button"

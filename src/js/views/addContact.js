@@ -12,7 +12,7 @@ export default function AddContact () {
     let navigate = useNavigate();
     
     const handleSubmit = () => {
-        actions.addContact(name, email, phone, address);
+        actions.createContact(name, email, phone, address);
         navigate("/");
     };
     return (
