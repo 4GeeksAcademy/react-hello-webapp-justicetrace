@@ -15,20 +15,25 @@ export const ContactCard = (props) => {
                     {props.phone}
                     {props.address}
                 </p>
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#examplemodal">Update</button>
+                <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                >
+                    Update
+                </button>
                 <div
                     className="modal fade"
                     id="exampleModal"
                     tabIndex="-1"
                     aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-
+                    aria-hidden="true"
+                >
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="exampleModalLabel">
-                                    Modal title
-                                </h1>
+                                <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                                 <button
                                     type="button"
                                     className="btn-close"
@@ -47,15 +52,14 @@ export const ContactCard = (props) => {
                                 >
                                     Close
                                 </button>
-                                <button type="button" className="btn btn-primary">
-                                    Save changes
-                                </button>
+                                <button type="button" className="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button className="btn btn-danger" onClick={() => actions.deleteContact(props.id)}>Delete</button>
             </div>
+            <button className="btn btn-danger" onClick={() => actions.deleteContact(props.id)}>Delete</button>
         </div>
+
     );
 };

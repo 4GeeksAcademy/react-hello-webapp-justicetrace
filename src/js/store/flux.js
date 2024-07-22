@@ -39,8 +39,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			createAgenda: async () => {
-				let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace');
+			createAgenda: async () => { let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace', 
+				{ method: "POST",
+				headers: { "Content-type": "application/json" },
+				});
 				let data = await response.json();
 				console.log(data);
 			},
@@ -48,7 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace/contacts',
 					{
 						method: "POST",
-						headers: {"contact-type": "application/json"},
+						headers: {"Content-type": "application/json"},
 						body: JSON.stringify({
 							name: name,
 							phone: phone,
@@ -69,21 +71,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 			updateContact: async (name, email, phone, address, id) => {
-				let response = await fetch (
-					'https://playground.4geeks.com/contact/agendas/justicetrace/contacts/' + id,
-					{
-					method: "PUT",
-					headers: {"contact-type": "applications/json"},
-					body: JSON.stringify({
-						name: name,
-						phone: phone,
-						email: email,
-						address: address
-				}),
-			});
-			let data = await response.json();
-			window.location.reload();
-			console.log(data);
+                let response = await fetch(
+                    'https://playground.4geeks.com/contact/agendas/justicetrace/contacts/' + id,
+                    {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            address: address
+                        }),
+                    });
+                let data = await response.json();
+                window.location.reload();
+                console.log(data);
 		},
 		deleteContact: async (id) => {
 			let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace/contacts/' + id,
