@@ -7,13 +7,13 @@ export const ContactCard = (props) => {
     const { store, actions } = useContext(Context);
     return (
         <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src="rigo-baby.jpg" className="card-img-top" alt="a picture" />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">
-                    {props.email}
-                    {props.phone}
-                    {props.address}
+                    <p>{props.email}</p>
+                    <p>{props.phone}</p>
+                    <p>{props.address}</p>
                 </p>
                 <button
                     type="button"
