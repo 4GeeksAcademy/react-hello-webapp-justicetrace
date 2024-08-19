@@ -39,7 +39,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			createAgenda: async () => { let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace', 
+			createAgenda: async () => { 
+				let response = await fetch('https://playground.4geeks.com/contact/agendas/justicetrace', 
 				{ method: "POST",
 				headers: { "Content-type": "application/json" },
 				});

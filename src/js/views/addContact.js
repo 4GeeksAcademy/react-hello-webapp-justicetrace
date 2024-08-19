@@ -13,6 +13,7 @@ export default function AddContact () {
     
     const handleSubmit = () => {
         actions.createContact(name, email, phone, address);
+        console.log("Contacts after addition:", store.contacts);
         navigate("/");
     };
     return (
